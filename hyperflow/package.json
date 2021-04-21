@@ -1,0 +1,72 @@
+{
+  "name": "hyperflow",
+  "version": "1.5.6",
+  "engines": {
+    "node": "~12.16.3"
+  },
+  "bin": {
+    "hflow": "./bin/hflow.js",
+    "hflow-recovery-analysis": "./bin/hflow-recover-analyze.js"
+  },
+  "scripts": {
+    "start": "node bin/hflow start-server"
+  },
+  "dependencies": {
+    "@dagrejs/graphlib": "^2.1.4",
+    "@hyperflow/hyperflow-static-scheduler-plugin": "file:../../hyperflow-dag-scheduler-plugin",
+    "@kubernetes/client-node": "^0.12.2",
+    "@supercharge/promise-pool": "^1.2.0",
+    "adm-zip": "0.4.11",
+    "amqplib": "0.5.2",
+    "async": "0.2.x",
+    "aws-sdk": "^2.2.1",
+    "axios": "^0.21.1",
+    "body-parser": "^1.18.3",
+    "consolidate": "0.10.x",
+    "crc": "0.2.1",
+    "cross-spawn": "^6.0.5",
+    "docopt": "0.6.2",
+    "eventemitter2": "5.x",
+    "express": "4.17.x",
+    "file": "0.2.x",
+    "glob": "^7.1.6",
+    "js-yaml": "^3.13.1",
+    "log4js": "^6.1.0",
+    "mustache": "^3.0.1",
+    "nconf": "^0.10.0",
+    "optimist": "^0.6.0",
+    "path": "0.4.9",
+    "q": "1.5.x",
+    "redis": "3.0.x",
+    "request": "2.x",
+    "requestretry": "1.x",
+    "shell-quote": "1.6.1",
+    "shortid": "^2.2.15",
+    "twitter": "^1.7.1",
+    "underscore": "1.x",
+    "uuid": "3.x",
+    "value": "0.3.0",
+    "walk": "2.x",
+    "when": "3.x",
+    "which": "1.x",
+    "xmldom": "^0.5.0",
+    "xpath": "0.x",
+    "z-schema": "2.0.x"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "SPEC.md",
+    "bin",
+    "common",
+    "engine2",
+    "eventlog",
+    "examples",
+    "functions",
+    "package.json",
+    "server",
+    "tests",
+    "utils",
+    "wflib"
+  ]
+}

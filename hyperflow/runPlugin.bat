@@ -1,0 +1,1 @@
+node bin/hflow.js run examples/Montage143 -p @hyperflow/hyperflow-static-scheduler-plugin

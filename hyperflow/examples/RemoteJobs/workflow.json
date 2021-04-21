@@ -1,0 +1,43 @@
+{
+  "name": "RemoteJobsTestWorkflow",
+  "processes": [ {
+    "name": "SubmitRemoteJob",
+    "type": "dataflow",
+    "parlevel": 0,
+    "firingLimit": 1,
+    "function": "submitRemoteJob",
+    "config": {
+      "executor": {
+        "executable": "./job.js",
+        "args": ["Hello", "world"],
+        "stdout": "RemoteJobTest.stdout",
+        "stderr": "RemoteJobTest.error"
+      }
+    },
+    "ins": [ "number", "number2" ],
+    "outs": [ ]
+  }, {
+    "name": "RemoteJobWithPipes",
+    "type": "dataflow",
+    "firingLimit": 1,
+    "function": "submitRemoteJob",
+    "config": {
+      "executor": {
+        "executable": "ls",
+        "args": ["-l", "|", "sort", "-r"],
+	"shell": true
+      }
+    },
+    "ins": [ "number" ],
+    "outs": [ ]
+  } ],
+  "signals": [ {
+    "name": "number",
+    "data": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+  }, {
+    "name": "number2",
+    "data": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+  } ],
+  "ins": [ "number" ],
+  "outs": [ ]
+}

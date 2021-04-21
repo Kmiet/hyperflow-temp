@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: heft-scheduler-service
+spec:
+  selector:
+    app: heft-scheduler
+  ports:
+  - protocol: "TCP"
+    port: 5000
+    targetPort: 5000
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: heft-scheduler
+spec:
+  selector:
+    matchLabels:
+      app: heft-scheduler
+  template:
+    metadata:
+      labels:
+        app: heft-scheduler
+      
+    spec:
+      containers:
+      - name: heft-scheduler
+        image: heft-scheduler:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5000
