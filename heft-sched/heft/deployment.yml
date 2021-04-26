@@ -9,6 +9,7 @@ spec:
   - protocol: "TCP"
     port: 5000
     targetPort: 5000
+  clusterIP: 10.100.0.214
 
 ---
 apiVersion: apps/v1
@@ -16,6 +17,7 @@ kind: Deployment
 metadata:
   name: heft-scheduler
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: heft-scheduler
@@ -23,11 +25,12 @@ spec:
     metadata:
       labels:
         app: heft-scheduler
-      
     spec:
       containers:
       - name: heft-scheduler
-        image: heft-scheduler:latest
-        imagePullPolicy: Never
+        image: 329701247918.dkr.ecr.us-east-1.amazonaws.com/krzysiek-ecr:latest
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000
+      nodeSelector:
+        nodetype: hfmaster
