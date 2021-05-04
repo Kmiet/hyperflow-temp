@@ -1,3 +1,6 @@
 /.docker/
 @scheduler/
 moj_sched/
+hyperflow-dag-scheduler-plugin/
+
+.DS_Store
