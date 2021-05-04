@@ -80,8 +80,11 @@ var createK8sJobYaml = (job, taskIds, context, jobYamlTemplate, customParams) =>
     restartPolicy: restartPolicy, backoffLimit: backoffLimit,
     experimentId: context.hfId + ":" + context.appId,
     workflowName: context.wfname, taskName: job.name,
-    appId: context.appId
+    appId: context.appId,
+    nodeSelector: customParams.scheduledNodeName,
   }
+
+  console.log('[k8s][Submit][Yaml]', 'Submitting to:', customParams.scheduledNodeName);
 
   // Add/override custom parameters for the job
   Object.keys(customParams).forEach(function(key) {

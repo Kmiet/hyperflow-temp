@@ -99,6 +99,10 @@ async function k8sCommandGroup(bufferItems) {
     });
   }
 
+  let scheduler = context.appConfig.scheduler;
+  const nodeSelector = await scheduler.getTaskExecutionPermission(context.appId, context.procId);
+  customParams.scheduledNodeName = nodeSelector; 
+
   //console.log("CUSTOM params...", customParams);
 
   // Set kubeconfig path if overridden (could point to a remote cluster)
