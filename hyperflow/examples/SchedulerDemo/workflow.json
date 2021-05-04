@@ -4,22 +4,32 @@
     "name": "task1",
     "type": "dataflow",
     "firingLimit": 1,
-    "function": "taskFunction",
-    "ins": [ "number", "number2" ],
-    "outs": [ ]
+    "function": "taskFunction2",
+    "ins": [ "number" ],
+    "outs": [ "number2" ]
   }, {
     "name": "task2",
     "type": "dataflow",
     "firingLimit": 1,
-    "function": "taskFunction",
-    "ins": [ "number" ],
+    "function": "taskFunction2",
+    "ins": [ "number3", "number2" ],
     "outs": [ ]
+  }, {
+    "name": "task3",
+    "type": "dataflow",
+    "firingLimit": 1,
+    "function": "taskFunction2",
+    "ins": [ "number" ],
+    "outs": [ "number3" ]
   } ],
   "signals": [ {
     "name": "number",
     "data": [ 1 ]
   }, {
     "name": "number2",
+    "data": [ 1 ]
+  }, {
+    "name": "number3",
     "data": [ 1 ]
   } ],
   "ins": [ "number" ],

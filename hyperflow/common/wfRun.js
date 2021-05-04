@@ -185,23 +185,16 @@ function hflowRun(opts, runCb) {
             //   console.log('Event captured: ' + exec + ' ' + args + ' job done');
             // });
 
-            // plugins.forEach(function(plugin) {
-            //     let config = {};
-            //     if (plugin.pgType == "scheduler") {
-            //         config.wfJson = wfJson;
-            //         config.wfId = wfId;
-            //     }
-            //     plugin.init(rcl, wflib, engine, config);
-            // });
-
-            await Promise.all(plugins.map(function(plugin) {
-                let config = {};
-                if (plugin.pgType == "scheduler") {
-                    config.wfJson = wfJson;
-                    config.wfId = wfId;
+            await Promise.all(
+                plugins.map(function(plugin) {
+                    let config = {};
+                    if (plugin.pgType == "scheduler") {
+                        config.wfJson = wfJson;
+                        config.wfId = wfId;
+                    }
+                    return plugin.init(rcl, wflib, engine, config);
                 }
-                return plugin.init(rcl, wflib, engine, config);
-            }));
+            ));
 
             engine.syncCb = function () {
                 process.exit();

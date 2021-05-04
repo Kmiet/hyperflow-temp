@@ -186,6 +186,12 @@ async function k8sCommand(ins, outs, context, cb) {
   try {
     var partition = context.executor.partition; // in case 'executor' doesn't exist
   } catch(error) { }
+
+  let scheduler = context.appConfig.scheduler;
+
+  const nodeSelector = await scheduler.getTaskExecutionPermission(context.appId, context.procId);
+  console.log('[k8s][Command]', 'Permission granted for task:', context.procId, 'on node:', nodeSelector);
+
   bufferManager.addItem(context.name, item, partition);
 
   return;

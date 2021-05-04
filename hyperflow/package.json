@@ -1,6 +1,6 @@
 {
   "name": "hyperflow",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "engines": {
     "node": "~12.16.3"
   },
@@ -37,7 +37,7 @@
     "optimist": "^0.6.0",
     "path": "0.4.9",
     "q": "1.5.x",
-    "redis": "3.0.x",
+    "redis": "3.1.x",
     "request": "2.x",
     "requestretry": "1.x",
     "shell-quote": "1.6.1",
