@@ -26,7 +26,7 @@ def write_files(payload):
 
 
 @app.route('/', methods=['POST'])
-def hello_world():
+def schedule_dag():
     payload = request.get_json()
     write_files(payload)
     comp_matrix_1 = heft.readCsvToNumpyMatrix('./execTimes.csv')
