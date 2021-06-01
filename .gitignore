@@ -2,5 +2,5 @@
 @scheduler/
 moj_sched/
 hyperflow-dag-scheduler-plugin/
-
+*.experiment
 .DS_Store

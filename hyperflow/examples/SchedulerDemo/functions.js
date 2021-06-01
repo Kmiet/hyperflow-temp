@@ -40,11 +40,11 @@ function taskFunction2(ins, outs, context, cb) {
 
 async function taskFunction2Cb(taskArray, node) {
 	console.log("Got scheduler callback, executing task array on node", node);
-	if (taskArray[0] && taskArray[0].context.procId == 3) {
-		await sleep(5000);
-	} else {
+	// if (taskArray[0] && taskArray[0].context.procId == 3) {
+	// 	await sleep(5000);
+	// } else {
 		await sleep(3000);
-	}
+	// }
 	taskArray.forEach(async (task) => {
 		let scheduler = task.context.appConfig.scheduler;
 		// if (task.context.procId == 2) {
