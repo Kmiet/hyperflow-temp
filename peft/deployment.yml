@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: peft-scheduler-service
+spec:
+  selector:
+    app: peft-scheduler
+  ports:
+  - protocol: "TCP"
+    port: 5000
+    targetPort: 5000
+  clusterIP: 10.100.0.214 # change
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: peft-scheduler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: peft-scheduler
+  template:
+    metadata:
+      labels:
+        app: peft-scheduler
+    spec:
+      containers:
+      - name: peft-scheduler
+        image: 329701247918.dkr.ecr.us-east-1.amazonaws.com/krzysiek-ecr:latest #change
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
+      nodeSelector:
+        nodetype: hfmaster
