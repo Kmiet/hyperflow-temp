@@ -1,1 +1,3 @@
 branch aglo - aglomeracja
+
+Nie zapomnij wyłączyć sched na defaultowym

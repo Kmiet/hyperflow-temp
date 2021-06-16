@@ -1,0 +1,43 @@
+{
+  "workflowName": "montage2",
+  "size": "0.25",
+  "version": "1.0.0",
+  "hyperflowId": "gW-6xNI5F",
+  "jobId": "gW-6xNI5F-1-227",
+  "handlerId": "Ng2C1t5YG",
+  "env": {
+    "podIp": "192.168.40.6",
+    "nodeName": "ip-192-168-50-218.ec2.internal",
+    "podName": "job07ezq-mproject-227-1-mnmd7",
+    "podServiceAccount": "default",
+    "podNamespace": "default"
+  },
+  "nodeName": "ip-192-168-50-218.ec2.internal",
+  "args": ["-X", "2mass-atlas-001020s-h0870245.fits", "p2mass-atlas-001020s-h0870245.fits", "region-oversized.hdr"],
+  "executable": "mProject",
+  "name": "mProject",
+  "ins": {
+    "0": {"name": "region-oversized.hdr", "_id": 2, "data": [{}], "sigIdx": 1},
+    "1": {"name": "2mass-atlas-001020s-h0870245.fits", "_id": 364, "data": [{}], "sigIdx": 1},
+    "length": 2,
+    "region-oversized.hdr": {"name": "region-oversized.hdr", "_id": 2, "data": [{}], "sigIdx": 1},
+    "2mass-atlas-001020s-h0870245.fits": {"name": "2mass-atlas-001020s-h0870245.fits", "_id": 364, "data": [{}], "sigIdx": 1}
+  },
+  "outs": {
+    "0": {"name": "p2mass-atlas-001020s-h0870245.fits"},
+    "1": {"name": "p2mass-atlas-001020s-h0870245_area.fits"},
+    "length": 2,
+    "p2mass-atlas-001020s-h0870245.fits": {"name": "p2mass-atlas-001020s-h0870245.fits"},
+    "p2mass-atlas-001020s-h0870245_area.fits": {"name": "p2mass-atlas-001020s-h0870245_area.fits"}
+  },
+  "inputs": [
+    {"name": "region-oversized.hdr", "size": 277},
+    {"name": "2mass-atlas-001020s-h0870245.fits", "size": 1473865}
+  ],
+  "outputs": [
+    {"name": "p2mass-atlas-001020s-h0870245.fits", "size": 4161600},
+    {"name": "p2mass-atlas-001020s-h0870245_area.fits", "size": 4161600}
+  ],
+  "command": "mProject -X 2mass-atlas-001020s-h0870245.fits p2mass-atlas-001020s-h0870245.fits region-oversized.hdr",
+  "execTimeMs": 19369
+}
