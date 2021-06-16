@@ -9,7 +9,7 @@ spec:
   - protocol: "TCP"
     port: 5000
     targetPort: 5000
-  clusterIP: 10.100.0.214 # change
+  clusterIP: 10.100.0.215
 
 ---
 apiVersion: apps/v1
@@ -28,8 +28,7 @@ spec:
     spec:
       containers:
       - name: peft-scheduler
-        image: 329701247918.dkr.ecr.us-east-1.amazonaws.com/krzysiek-ecr:latest #change
-        imagePullPolicy: IfNotPresent
+        image: 329701247918.dkr.ecr.us-east-1.amazonaws.com/krzysiek-ecr-2:latest
         ports:
         - containerPort: 5000
       nodeSelector:
