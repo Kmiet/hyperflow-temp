@@ -9,7 +9,7 @@ spec:
   - protocol: "TCP"
     port: 5000
     targetPort: 5000
-  clusterIP: 10.100.0.215
+  clusterIP: 10.100.0.213
 
 ---
 apiVersion: apps/v1

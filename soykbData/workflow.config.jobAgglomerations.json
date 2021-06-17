@@ -1,0 +1,72 @@
+[
+  {
+    "matchTask":[ "alignment_to_reference"],
+    "size": 500,
+    "timeoutMs": 2000
+  },
+  {
+    "matchTask": ["sort_sam"],
+    "size": 500,
+    "timeoutMs": 2000
+  },
+  {
+    "matchTask": ["dedup"],
+    "size": 500,
+    "timeoutMs": 2000
+  },
+  {
+    "matchTask": ["add_replace"],
+    "size": 500,
+    "timeoutMs": 2000
+  },
+  {
+    "matchTask": ["realign_target_creator"],
+    "size": 500,
+    "timeoutMs": 2000
+  },
+  {
+    "matchTask": ["indel_realign"],
+    "size": 500,
+    "timeoutMs": 2000
+  },
+  {
+    "matchTask": ["haplotype_caller"],
+    "size": 500,
+    "timeoutMs": 2000
+  },
+  {
+    "matchTask": ["merge_gcvf"],
+    "size": 500,
+    "timeoutMs": 2000
+  },
+  {
+    "matchTask": ["genotype_gvcfs"],
+    "size": 500,
+    "timeoutMs": 2000
+  },
+  {
+    "matchTask": ["combine_variants"],
+    "size": 500,
+    "timeoutMs": 2000
+  },
+  {
+    "matchTask": ["select_variants_snp"],
+    "size": 500,
+    "timeoutMs": 2000
+  },
+  {
+    "matchTask": ["filtering_snp"],
+    "size": 500,
+    "timeoutMs": 2000
+  },
+  {
+    "matchTask": ["select_variants_indel"],
+    "size": 500,
+    "timeoutMs": 2000
+  },
+  {
+    "matchTask": ["filtering_indel"],
+    "size": 500,
+    "timeoutMs": 2000
+  }
+]

@@ -1,4 +1,5 @@
 /.docker/
+/xperiment-data
 @scheduler/
 moj_sched/
 hyperflow-dag-scheduler-plugin/

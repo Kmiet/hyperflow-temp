@@ -212,8 +212,9 @@ var submitK8sJob = async(kubeconfig, jobArr, taskIdArr, contextArr, customParams
     console.log('Job ended with result:', jobResult, 'time:', taskEnd);
 
     let scheduler = context.appConfig.scheduler;
-    console.log('[k8s][Submit]', 'Notifying completion of: ', taskId);
-    scheduler.notifyTaskCompletion(context.appId, context.procId);
+    let localProcId = taskId.split(':')[2];
+    console.log('[k8s][Submit]', 'Notifying completion of: ', localProcId);
+    scheduler.notifyTaskCompletion(context.appId, localProcId);
     
     var code = parseInt(jobResult[1]); // job exit code
     return code;
